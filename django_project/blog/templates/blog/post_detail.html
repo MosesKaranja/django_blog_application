@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<h2>Over Here!</h2>
+<!-- {% for post in posts %} -->
+
+<article class="media content-section">
+  <img class="article-image" style="border-radius: 50%; width: 6.25rem;height: 6.25rem;" src="{{ object.author.profile.image.url }}"/>
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ object.author }}</a>
+        <!-- <small class="text-muted">{{ post.date_posted }}</small> -->
+        <small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small>
+      </div>
+      <h2 class="article-title">{{ object.title }}></h2>
+      <p class="article-content">{{ object.content }}</p>
+    </div>
+  </article>
+
+<!-- {% endfor %} -->
+{% endblock content %}
